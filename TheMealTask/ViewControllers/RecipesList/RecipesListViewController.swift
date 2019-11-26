@@ -29,7 +29,7 @@ class RecipesListViewController: UIViewController {
     }
     
     private func initPrerequisite() {
-        recipesCollectionView.register(UINib(nibName: "RecipeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecipeCollectionViewCell")
+        recipesCollectionView.register(UINib(nibName: RecipeCollectionViewCell.cellIdentifier, bundle: nil), forCellWithReuseIdentifier: RecipeCollectionViewCell.cellIdentifier)
         
         repo = MealsRepo()
         collectionViewHandler = RecipesCollectionViewDataHandler(viewController: self, delegate: self)
@@ -66,7 +66,7 @@ class RecipesListViewController: UIViewController {
 extension RecipesListViewController: RecipesCollectionViewDataHandlerProtocol {
     func didSelectMeal(mealId: String) {
         let storyboard = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "RecipesDetailsViewController") as? RecipesDetailsViewController else {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: RecipesDetailsViewController.identifier) as? RecipesDetailsViewController else {
             fatalError("Double check for the requested viewController of type RecipesDetailsViewController in storyboard with id \(Storyboards.main.rawValue)")
         }
         viewController.selectedMealId = mealId

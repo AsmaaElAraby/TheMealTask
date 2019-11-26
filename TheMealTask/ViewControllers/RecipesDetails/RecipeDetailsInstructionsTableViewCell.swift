@@ -13,9 +13,12 @@ class RecipeDetailsInstructionsTableViewCell: UITableViewCell {
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var circle: UIView!
 
+    static let cellIdentifier = "RecipeDetailsInstructionsTableViewCell"
+
     func bindData(_ instruction: String) {
         
         instructionLabel.text = instruction
         circle.layer.cornerRadius = 6
+        selectionStyle = .none
     }
 }

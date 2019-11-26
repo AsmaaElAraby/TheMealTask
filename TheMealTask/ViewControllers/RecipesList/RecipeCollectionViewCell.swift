@@ -16,6 +16,8 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     
+    static let cellIdentifier = "RecipeCollectionViewCell"
+
     func bindData(_ data: MealGeneralInfo) {
         
         shadowView.setShadow()

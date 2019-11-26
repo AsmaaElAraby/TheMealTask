@@ -15,6 +15,7 @@ class RecipeDetailsImageTableViewCell: UITableViewCell {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     
+    static let cellIdentifier = "RecipeDetailsImageTableViewCell"
     private var parent: UIViewController? = nil
     
     func bindData(_ data: MealGeneralInfo, parent: UIViewController) {
@@ -23,6 +24,7 @@ class RecipeDetailsImageTableViewCell: UITableViewCell {
         recipeTitleLabel.text = data.title
         recipeImageView?.sd_setImage(with: URL(string: data.mealThumb ?? ""), placeholderImage: UIImage(named: "noImagePlaceholder"))
         dismissButton.layer.cornerRadius = dismissButton.bounds.size.width/2
+        selectionStyle = .none
     }
     
     @IBAction func dismissButtonPressed(_ sender: Any) {

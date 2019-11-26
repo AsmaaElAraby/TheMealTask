@@ -11,6 +11,8 @@ import MBProgressHUD
 
 class RecipesDetailsViewController: UITableViewController {
     
+    static let identifier = "RecipesDetailsViewController"
+    
     var selectedMealId: String? = nil
     private var repo: MealsRepoProtocol!
     private var mealDetails: MealGeneralInfo? = nil {
@@ -41,9 +43,9 @@ class RecipesDetailsViewController: UITableViewController {
     
     private func initPrerequisite() {
         
-        tableView.register(UINib(nibName: "RecipeDetailsImageTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeDetailsImageTableViewCell")
-        tableView.register(UINib(nibName: "RecipeDetailsInstructionsTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeDetailsInstructionsTableViewCell")
-        tableView.register(UINib(nibName: "RecipeDetailsIngradientTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeDetailsIngradientTableViewCell")
+        tableView.register(UINib(nibName: RecipeDetailsImageTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: RecipeDetailsImageTableViewCell.cellIdentifier)
+        tableView.register(UINib(nibName: RecipeDetailsInstructionsTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: RecipeDetailsInstructionsTableViewCell.cellIdentifier)
+        tableView.register(UINib(nibName: RecipeDetailsIngradientTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: RecipeDetailsIngradientTableViewCell.cellIdentifier)
         tableView.separatorStyle = .none
         
         repo = MealsRepo()
@@ -97,17 +99,14 @@ class RecipesDetailsViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeDetailsImageTableViewCell") as! RecipeDetailsImageTableViewCell
             cell.bindData(mealDetails!, parent: self)
-            cell.selectionStyle = .none
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeDetailsIngradientTableViewCell") as! RecipeDetailsIngradientTableViewCell
             cell.bindData("\(mealDetails!.totalMeasurments[indexPath.row]) \(mealDetails!.totalIngredients[indexPath.row])")
-            cell.selectionStyle = .none
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeDetailsInstructionsTableViewCell") as! RecipeDetailsInstructionsTableViewCell
             cell.bindData(mealDetails!.instructionsAsSteps[indexPath.row])
-            cell.selectionStyle = .none
             return cell
         default:
             fatalError("please check the cells again")

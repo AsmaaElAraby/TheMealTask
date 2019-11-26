@@ -12,9 +12,12 @@ class RecipeDetailsIngradientTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ingradientLabel: UILabel!
 
+    static let cellIdentifier = "RecipeDetailsIngradientTableViewCell"
+
     func bindData(_ instruction: String) {
         
         ingradientLabel.text = instruction
+        selectionStyle = .none
     }
     
 }
