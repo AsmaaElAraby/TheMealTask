@@ -295,9 +295,9 @@
 		7E9DB3AD2389A096005E6FDA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7E99F635238C5D010003F18D /* Localization */,
 				7E99F633238C5C490003F18D /* CachedData.swift */,
 				7E99F63B238C5DAB0003F18D /* Constants.swift */,
+				7E99F635238C5D010003F18D /* Localization */,
 				7E9DB3C7238ACF45005E6FDA /* Exenstions */,
 				7E9DB3BE238AA613005E6FDA /* Managers */,
 			);
