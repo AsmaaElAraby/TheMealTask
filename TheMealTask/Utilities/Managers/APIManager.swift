@@ -35,8 +35,7 @@ class APIManager {
                 
                 handler(resultDecoded, nil)
                 break
-            case let .failure(error):
-                print(error.localizedDescription)
+            case let .failure(_):
                 let customError: CustomError = CustomError(errorCode: .generalError, serverErrorCode: result.error?.response?.statusCode)
                 handler(nil, customError)
                 break

@@ -18,20 +18,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-e8-7m7">
-                        <rect key="frame" x="8" y="8" width="304" height="32"/>
+                        <rect key="frame" x="16" y="8" width="288" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Gat-e8-7m7" secondAttribute="trailing" constant="8" id="DUn-Gl-PfQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Gat-e8-7m7" secondAttribute="trailing" constant="16" id="DUn-Gl-PfQ"/>
                     <constraint firstAttribute="bottom" secondItem="Gat-e8-7m7" secondAttribute="bottom" constant="8" id="TtT-a7-SaR"/>
-                    <constraint firstItem="Gat-e8-7m7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="cvw-Ob-oi0"/>
+                    <constraint firstItem="Gat-e8-7m7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="cvw-Ob-oi0"/>
                     <constraint firstItem="Gat-e8-7m7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dD2-Dw-Njl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ingradientLabel" destination="Gat-e8-7m7" id="LIu-2D-D6A"/>
+            </connections>
             <point key="canvasLocation" x="347.82608695652175" y="126.5625"/>
         </tableViewCell>
     </objects>

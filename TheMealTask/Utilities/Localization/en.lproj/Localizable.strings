@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  TheMealTask
+
+  Created by Asmaa Mostafa on 25/11/2019.
+  Copyright © 2019 AsmaaElaraby. All rights reserved.
+*/
+
+//MARK: - General -
+
+"OkActionTitle" = "Ok";
+
+//MARK: - Screen titles -
+
+"Recipes" = "Recipes";
+
+//MARK: - Error Messages -
+
+"GeneralError" = "Sorry, an error occured. Please try again later";
+"NetworkError" = "Please, Check your internet connection and try again.";
+"SelectingMealError" = "Error selecting a meal, if you may try again";
+
+//MARK: - Screen Meal Details  -
+
+"IngrediantsHeader" = "Ingrediants";
+"InstructionsHeader" = "Instructions";

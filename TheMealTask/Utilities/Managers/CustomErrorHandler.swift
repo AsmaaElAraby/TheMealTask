@@ -11,6 +11,7 @@ import Foundation
 enum CustomErrorCode: Int {
     case timeout = 524
     case generalError = 500
+    case connectionError = -1009
 }
 
 struct CustomError: Error {
@@ -25,10 +26,10 @@ class ErrorHandler {
 
     class func errorMesage(forErrorCode error: CustomErrorCode) -> String {
         switch error {
-        case .timeout:
-            return "timeout"
+        case .timeout, .connectionError:
+            return Localization.Error.NetworkError
         default:
-            return "GeneralError"
+            return Localization.Error.GeneralError
         }
     }
 }

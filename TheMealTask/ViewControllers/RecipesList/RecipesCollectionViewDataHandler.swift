@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RecipesCollectionViewDataHandlerProtocol {
-    func didSelectItem(index: Int)
+    func didSelectMeal(mealId: String)
 }
 
 class RecipesCollectionViewDataHandler: NSObject {
@@ -57,7 +57,7 @@ extension RecipesCollectionViewDataHandler: UICollectionViewDataSource {
 
 extension RecipesCollectionViewDataHandler: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        delegate.didSelectMeal(mealId: collectionViewData[indexPath.row].mealId ?? "")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
